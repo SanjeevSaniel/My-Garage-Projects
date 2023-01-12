@@ -1,0 +1,13 @@
+.App {
+  /* text-align: center; */
+  max-width: fit-content;
+  margin: 5rem;
+}
+
+ul {
+  margin: 5rem;
+}
+
+li {
+  list-style-type: none;
+}
