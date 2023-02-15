@@ -1,0 +1,12 @@
+body {
+  padding: 20px;
+}
+
+.movies-container {
+  margin: auto;
+  /* max-width: 70rem; */
+}
+
+/* .movie-item {
+  max-width: 2rem;
+} */
