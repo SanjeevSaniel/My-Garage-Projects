@@ -3,16 +3,28 @@ import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
 import Like from "./common/Like";
 
-const MoviesTable = ({ movies, onLike, onDelete }) => {
+const MoviesTable = ({ movies, onLike, onDelete, onSort, sortColumn }) => {
+  const raiseSort = (path) => {
+    const sortColumnCopy = { ...sortColumn };
+    if (sortColumnCopy.path === path) {
+      sortColumnCopy.order = sortColumnCopy.order === "asc" ? "desc" : "asc";
+    } else {
+      sortColumnCopy.path = path;
+      sortColumnCopy.order = "asc";
+    }
+
+    onSort(sortColumnCopy);
+  };
+
   return (
     <Table striped>
       <thead>
         <tr>
           <th style={{ textAlign: "center" }}>#</th>
-          <th>Title</th>
-          <th>Genre</th>
-          <th>Stock</th>
-          <th>Rate</th>
+          <th onClick={() => raiseSort("title")}>Title</th>
+          <th onClick={() => raiseSort("genre.name")}>Genre</th>
+          <th onClick={() => raiseSort("numberInStock")}>Stock</th>
+          <th onClick={() => raiseSort("dailyRentalRate")}>Rate</th>
           <th></th>
           <th></th>
         </tr>

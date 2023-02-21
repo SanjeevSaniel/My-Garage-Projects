@@ -1,11 +1,8 @@
 import "./Movies.css";
 import React, { useEffect, useState } from "react";
 // import axios from "axios";
-import Table from "react-bootstrap/Table";
-import Button from "react-bootstrap/Button";
 import { getMovies } from "../../services/fakeMovieService";
 import { getGenres } from "../../services/fakeGenreService";
-import Like from "../common/Like";
 import PaginationComponent from "../common/Pagination";
 import { paginate } from "../../utils/paginate";
 import GenresList from "../common/GenresList";
@@ -15,6 +12,8 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import MoviesTable from "./../MoviesTable";
 
+import _ from "lodash";
+
 const Movies = () => {
   const [allMovies, setAllMovies] = useState([]);
   const pageSize = 4;
@@ -22,6 +21,8 @@ const Movies = () => {
 
   const [allGenres, setAllGenres] = useState([]);
   const [selectedGenre, setSelectedGenre] = useState("");
+
+  const [sortColumn, setSortColumn] = useState({ path: "title", order: "asc" });
 
   // TODO: Delete Handler
   const handleDelete = (movie) => {
@@ -53,8 +54,15 @@ const Movies = () => {
     setCurrentPage(1);
   };
 
+  // TODO: Sort Handler
+  const handleSort = (sortColumn) => {
+    // console.log(path);
+
+    setSortColumn(sortColumn);
+  };
+
   useEffect(() => {
-    const genres = [{ name: "All Genres" }, ...getGenres()];
+    const genres = [{ _id: "", name: "All Genres" }, ...getGenres()];
 
     setAllMovies(getMovies());
     setAllGenres(genres);
@@ -68,8 +76,10 @@ const Movies = () => {
       ? allMovies.filter((m) => m.genre._id === selectedGenre._id)
       : allMovies;
 
+  const sorted = _.orderBy(filtered, [sortColumn.path], [sortColumn.order]);
+
   // TODO: Paginate Data
-  const showMovies = paginate(filtered, currentPage, pageSize);
+  const showMovies = paginate(sorted, currentPage, pageSize);
 
   return (
     <Container>
@@ -88,8 +98,10 @@ const Movies = () => {
 
           <MoviesTable
             movies={showMovies}
+            sortColumn={sortColumn}
             onLike={handleLike}
             onDelete={handleDelete}
+            onSort={handleSort}
           />
 
           <PaginationComponent
