@@ -11,20 +11,13 @@ const GenresList = ({
   return (
     <div>
       <ListGroup as="ul" style={{ cursor: "pointer" }}>
-        {/* <ListGroup.Item
-          as="li"
-          onClick={() => onGenreSelect()}
-          active={currentGenre === "All Genres"}
-        >
-          {"All Genres"}
-        </ListGroup.Item> */}
-
-        {genres.map((genre) => {
+        {genres.map((genre, index) => {
           return (
             <ListGroup.Item
               as="li"
               onClick={() => onGenreSelect(genre)}
-              key={genre[valueProperty]}
+              // key={genre[valueProperty]}
+              key={index}
               active={genre === selectedGenre}
             >
               {genre[textProperty]}

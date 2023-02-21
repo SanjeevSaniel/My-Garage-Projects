@@ -13,6 +13,7 @@ import GenresList from "../common/GenresList";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import MoviesTable from "./../MoviesTable";
 
 const Movies = () => {
   const [allMovies, setAllMovies] = useState([]);
@@ -84,44 +85,13 @@ const Movies = () => {
         </Col>
         <Col lg="10">
           <p>Showing {filtered.length} movies n the database.</p>
-          <Table striped>
-            <thead>
-              <tr>
-                <th style={{ textAlign: "center" }}>#</th>
-                <th>Title</th>
-                <th>Genre</th>
-                <th>Stock</th>
-                <th>Rate</th>
-                <th></th>
-                <th></th>
-              </tr>
-            </thead>
-            <tbody>
-              {showMovies.map((movie, index) => (
-                <tr key={movie._id}>
-                  <td style={{ textAlign: "center" }}>{index + 1}</td>
-                  <td>{movie.title}</td>
-                  <td>{movie.genre.name}</td>
-                  <td>{movie.numberInStock}</td>
-                  <td>{movie.dailyRentalRate}</td>
-                  <td>
-                    <Like
-                      liked={movie.liked}
-                      onLikeToggle={() => handleLike(movie)}
-                    />
-                  </td>
-                  <td style={{ textAlign: "center", maxWidth: "4rem" }}>
-                    <Button
-                      onClick={() => handleDelete(movie)}
-                      variant="danger"
-                    >
-                      Delete
-                    </Button>
-                  </td>
-                </tr>
-              ))}
-            </tbody>
-          </Table>
+
+          <MoviesTable
+            movies={showMovies}
+            onLike={handleLike}
+            onDelete={handleDelete}
+          />
+
           <PaginationComponent
             itemsCount={filtered.length}
             pageSize={pageSize}
