@@ -8,6 +8,7 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Badge from "react-bootstrap/Badge";
+import { Link } from "react-router-dom";
 
 const NavbarComponent = () => {
   // const cart = 0;
@@ -19,12 +20,14 @@ const NavbarComponent = () => {
       bg="light"
       variant="light"
       className="mb-3"
-      sticky
+      fixed="top"
     >
       <Container fluid>
-        <Navbar.Brand href="#home" style={{ fontSize: "30px" }}>
-          <img style={{ width: "50px" }} src={Logo} alt="" /> genie
-        </Navbar.Brand>
+        <Link to={"/"} style={{ textDecoration: "none" }}>
+          <Navbar.Brand style={{ fontSize: "30px" }}>
+            <img style={{ width: "50px" }} src={Logo} alt="" /> genie
+          </Navbar.Brand>
+        </Link>
 
         {/* <Navbar.Toggle aria-controls="responsive-navbar-nav" /> */}
         <Navbar.Toggle aria-controls="offcanvasNavbar-expand-lg" />

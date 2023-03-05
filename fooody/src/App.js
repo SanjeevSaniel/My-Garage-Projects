@@ -1,6 +1,8 @@
 import { createContext, useEffect, useState } from "react";
 import "./App.css";
 
+import NavbarComponent from "./common/navbarComponent";
+
 import { Route, Routes } from "react-router-dom";
 import Menu from "./components/MenuPage/menu";
 
@@ -18,6 +20,7 @@ function App() {
 
   return (
     <div className="App">
+      <NavbarComponent />
       <RestaurantContext.Provider value={restaurants}>
         {/* <RestaurantApp /> */}
 
