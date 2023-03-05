@@ -1,19 +1,39 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { RestaurantContext } from "./../../App";
+import { CartContext, RestaurantContext } from "./../../App";
 
 import Button from "react-bootstrap/Button";
 
 const Menu = () => {
   const restaurants = useContext(RestaurantContext);
-  const { id } = useParams();
+  const { r_id } = useParams();
+
+  const [cart, setCart] = useContext(CartContext);
+
+  const addToCart = (item) => {
+    let existingItem = cart.filter((c) => c.code === item.code);
+
+    if (existingItem.length !== 0) {
+      let result = existingItem.map((i) => (i.quantity += 1));
+      console.log(result);
+      // localStorage.setItem("food_cart", JSON.stringify(cart));
+    } else {
+      let updatedData = { ...item, quantity: 1 };
+      setCart((current) => [...current, updatedData]);
+      // localStorage.setItem("food_cart", JSON.stringify(cart));
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("food_cart", JSON.stringify(cart));
+  }, [cart]);
 
   return (
     <div style={{ margin: "auto", maxWidth: "1000px" }}>
       {restaurants
-        .filter((restaurant) => restaurant._id === parseInt(id))
+        .filter((restaurant) => restaurant._id === parseInt(r_id))
         .map((restaurant) => (
-          <section key={id}>
+          <section key={r_id}>
             <div
               style={{
                 display: "grid",
@@ -79,8 +99,8 @@ const Menu = () => {
                   <span>Non-Veg</span>
                 </div>
               </div>
-              {restaurant.menu.map((m) => (
-                <div>
+              {restaurant.menu.map((m, index) => (
+                <div key={index}>
                   <div
                     style={{
                       display: "grid",
@@ -92,7 +112,7 @@ const Menu = () => {
                     }}
                   >
                     <div style={{ margin: "auto" }}>
-                      {m.item_name} <br /> ₹{m.item_price}
+                      {m.name} <br /> ₹{m.price}
                     </div>
 
                     <div>
@@ -103,7 +123,8 @@ const Menu = () => {
                           fontSize: "14px",
                           // color: "green",
                         }}
-                        variant={m.item_type === "veg" ? "success" : "danger"}
+                        variant={m.type === "veg" ? "success" : "danger"}
+                        onClick={() => addToCart(m)}
                       >
                         ADD
                       </Button>

@@ -33,7 +33,7 @@ const ProductCard = ({ onRestaurantSelect }) => {
         {restaurants.map((restaurant) => (
           <Link
             key={restaurant._id}
-            to={`/${restaurant._id}`}
+            to={`/restaurant/${restaurant._id}`}
             style={{ textDecoration: "none", color: "grey" }}
           >
             <Col

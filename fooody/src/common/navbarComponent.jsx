@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "../images/genie.png";
 import "./navbar.css";
 import Container from "react-bootstrap/Container";
@@ -8,10 +8,11 @@ import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import Badge from "react-bootstrap/Badge";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { CartContext } from "../App";
 
 const NavbarComponent = () => {
-  // const cart = 0;
+  const [cart] = useContext(CartContext);
 
   return (
     <Navbar
@@ -21,6 +22,7 @@ const NavbarComponent = () => {
       variant="light"
       className="mb-3"
       fixed="top"
+      // style={{ alignItems: "center" }}
     >
       <Container fluid>
         <Link to={"/"} style={{ textDecoration: "none" }}>
@@ -56,13 +58,35 @@ const NavbarComponent = () => {
               </Form>
             </Nav>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              <Nav.Link href="#signin">Sign in</Nav.Link>
-              <Nav.Link href="#cart">
-                <Badge pill bg="primary" style={{ borderRadius: "100%" }}>
-                  1
+              <NavLink
+                to={"/signin"}
+                style={{
+                  margin: "10px",
+                  textDecoration: "none",
+                  color: "grey",
+                }}
+              >
+                Sign in
+              </NavLink>
+
+              <NavLink
+                to={"/cart"}
+                style={{
+                  margin: "10px",
+                  textDecoration: "none",
+                  color: "grey",
+                }}
+              >
+                <Badge
+                  pill
+                  bg="primary"
+                  style={{ borderRadius: "100%", marginRight: "5px" }}
+                >
+                  {cart.length}
                 </Badge>
                 Cart
-              </Nav.Link>
+              </NavLink>
+
               {/* <Nav.Link href="#pricing">Pricing</Nav.Link> */}
             </Nav>
           </Offcanvas.Body>

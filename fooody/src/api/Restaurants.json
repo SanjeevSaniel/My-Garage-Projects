@@ -10,36 +10,40 @@
         "offer": "free delivery",
         "menu": [
             {
-                "item_id": 1,
-                "item_name": "Margherita",
-                "item_price": 169,
+                "_id": 1,
+                "code": "m11",
+                "name": "Margherita",
+                "price": 169,
                 "sub-category": "Veg Pizza",
-                "item_type": "veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/dpventcrozvfni0lqb10"
+                "type": "veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/dpventcrozvfni0lqb10"
             },
             {
-                "item_id": 2,
-                "item_name": "Veggie Tandoori",
-                "item_price": 259,
+                "_id": 2,
+                "code": "m12",
+                "name": "Veggie Tandoori",
+                "price": 259,
                 "sub-category": "Veg Pizza",
-                "item_type": "veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/pdnars9izjxrigqy675c"
+                "type": "veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/pdnars9izjxrigqy675c"
             },
             {
-                "item_id": 3,
-                "item_name": "Chicken N Corn Delight",
-                "item_price": 319,
+                "_id": 3,
+                "code": "m13",
+                "name": "Chicken N Corn Delight",
+                "price": 319,
                 "sub-category": "Non-Veg Pizza",
-                "item_type": "non-veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ydm9zbwskvhw1mozn4nd"
+                "type": "non-veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ydm9zbwskvhw1mozn4nd"
             },
             {
-                "item_id": 4,
-                "item_name": "Chicken Tikka",
-                "item_price": 379,
+                "_id": 4,
+                "code": "m14",
+                "name": "Chicken Tikka",
+                "price": 379,
                 "sub-category": "Non-Veg Pizza",
-                "item_type": "non-veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/juplqft4tmub5hqocwxk"
+                "type": "non-veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/juplqft4tmub5hqocwxk"
             }
         ]
     },
@@ -90,28 +94,31 @@
         "offer": "free delivery",
         "menu": [
             {
-                "item_id": 1,
-                "item_name": "Paneer Chatpata",
-                "item_price": 375,
+                "_id": 1,
+                "code": "m61",
+                "name": "Paneer Chatpata",
+                "price": 375,
                 "sub-category": "North Indian",
-                "item_type": "veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/yc1qyfr8pga6aui4dror"
+                "type": "veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/yc1qyfr8pga6aui4dror"
             },
             {
-                "item_id": 2,
-                "item_name": "Veg Biryani",
-                "item_price": 275,
+                "_id": 2,
+                "code": "m62",
+                "name": "Veg Biryani",
+                "price": 275,
                 "sub-category": "North Indian",
-                "item_type": "veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/sdc9k0ddy7vss4dfq70z"
+                "type": "veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/sdc9k0ddy7vss4dfq70z"
             },
             {
-                "item_id": 3,
-                "item_name": "Chicken Lotpot",
-                "item_price": 300,
+                "_id": 3,
+                "code": "m63",
+                "name": "Chicken Lotpot",
+                "price": 300,
                 "sub-category": "North Indian",
-                "item_type": "non-veg",
-                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/14b7859ac36a7001adead323b45c9e50"
+                "type": "non-veg",
+                "image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/14b7859ac36a7001adead323b45c9e50"
             }
         ]
     },
