@@ -1,0 +1,77 @@
+[
+    {
+        "_id": 1,
+        "name": "Pizza Hut",
+        "categories": "Pizzas",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/mqip01qkhtqy5vwui6kw",
+        "rating": 3.7,
+        "price": 200,
+        "offer": "free delivery"
+    },
+    {
+        "_id": 2,
+        "name": "Yummy Tummy",
+        "categories": "Chinese, North Indian, Fast Food",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/f52gynjn42tjltthdrmh",
+        "rating": 4.7,
+        "price": 150,
+        "offer": "free delivery"
+    },
+    {
+        "_id": 3,
+        "name": "Apna Hotel",
+        "categories": "North Indian, Biryani",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/dd2xfokjvxkd5qfuw9qd",
+        "rating": 4.0,
+        "price": 150,
+        "offer": "free delivery"
+    },
+    {
+        "_id": 4,
+        "name": "KFC",
+        "categories": "Burgers, Biryani, American, Snacks, Fast Food",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/r93ljtqjnlpn2xr24dln",
+        "rating": 4.2,
+        "price": 200,
+        "offer": "free delivery"
+    },
+    {
+        "_id": 5,
+        "name": "Perfect Moments",
+        "categories": "Indian, Chinese",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/a449df7e6d140983d0b6dc055bf5c8ae",
+        "rating": 4.1,
+        "price": 150,
+        "offer": "free delivery"
+    },
+    {
+        "_id": 6,
+        "name": "MAYFAIR HOTELS AND RESORTS",
+        "categories": "Continental, North Indian",
+        "address": "Civil Township",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/jkpmeybizyolzm5uxtxh",
+        "rating": 4.4,
+        "price": 1500,
+        "offer": "free delivery",
+        "menu": [
+            {
+                "item_id": 1,
+                "item_name": "Paneer Chatpata",
+                "item_price": 375,
+                "sub-category": "North Indian",
+                "item_type": "veg",
+                "item_image": ""
+            }
+        ]
+    },
+    {
+        "_id": 7,
+        "name": "Waffle Cart",
+        "categories": "Waffle",
+        "address": "Civil Township",
+        "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ee0d06868a90acca5953ca6af298b638",
+        "rating": 3.9,
+        "price": 250,
+        "offer": "free delivery"
+    }
+]

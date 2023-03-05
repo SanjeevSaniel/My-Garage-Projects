@@ -1,0 +1,27 @@
+.banner-container {
+  background: #4a4d5e;
+  padding: 3rem;
+  color: #ffffff;
+}
+
+.banner-content {
+  max-width: fit-content;
+  padding: 1rem;
+}
+
+.searchbox {
+  max-width: 30rem;
+  padding: 1rem 0;
+}
+
+#button-addon {
+  color: #ec8738;
+  border: 1px solid #ec8738;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+#button-addon:hover {
+  color: #ffffff;
+  background: #ec8738;
+}

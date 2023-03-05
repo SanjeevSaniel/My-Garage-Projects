@@ -1,0 +1,52 @@
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-flow: row;
+  padding: 5px 20px;
+  background: #eaecee;
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  box-shadow: 0 1px 15px 1px rgb(222, 221, 221);
+  border-bottom: 0.5px solid rgb(220, 220, 220);
+}
+
+.navbar--menus {
+  margin: 0;
+  padding: 0;
+}
+
+.menu-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  margin: 0 10px;
+  cursor: pointer;
+}
+
+.menu-label {
+  margin: 0 5px;
+}
+
+.cart-logo {
+  position: relative;
+  padding: 5px;
+}
+
+.cart-count {
+  position: absolute;
+  left: 20px;
+  top: -5px;
+  right: -5px;
+  padding: 5px;
+  border-radius: 100%;
+  /* width: 10px;
+  height: 10px; */
+  color: #d71406;
+  font-size: 15px;
+  /* background: #5887b6; */
+  box-sizing: content-box;
+}
