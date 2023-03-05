@@ -45,44 +45,74 @@ const Menu = () => {
               </div>
             </div>
             <div>
-              {restaurant.menu.map((m) => (
+              <div>
                 <div
                   style={{
-                    display: "grid",
-                    gridTemplateColumns: "auto auto",
+                    display: "flex",
                     alignItems: "center",
-                    justifyContent: "space-between",
-                    padding: "0 10rem",
                   }}
                 >
-                  <div style={{ margin: "auto" }}>
-                    <div
-                      style={{
-                        width: "10px",
-                        height: "10px",
-                        background: "green",
-                      }}
-                    ></div>
-                    {m.item_name} <br /> ₹{m.item_price}
-                  </div>
+                  <div
+                    style={{
+                      background: "green",
+                      width: "10px",
+                      height: "10px",
+                      marginRight: "10px",
+                    }}
+                  ></div>
+                  <span>Veg</span>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    alignItems: "center",
+                  }}
+                >
+                  <div
+                    style={{
+                      background: "red",
+                      width: "10px",
+                      height: "10px",
+                      marginRight: "10px",
+                    }}
+                  ></div>
+                  <span>Non-Veg</span>
+                </div>
+              </div>
+              {restaurant.menu.map((m) => (
+                <div>
+                  <div
+                    style={{
+                      display: "grid",
+                      gridTemplateColumns: "auto auto",
+                      alignItems: "center",
+                      justifyContent: "space-between",
+                      padding: "0 10rem",
+                      margin: "16px",
+                    }}
+                  >
+                    <div style={{ margin: "auto" }}>
+                      {m.item_name} <br /> ₹{m.item_price}
+                    </div>
 
-                  <div>
-                    <Button
-                      style={{
-                        width: "fit-content",
-                        padding: "5px 10px",
-                        fontSize: "14px",
-                        // color: "green",
-                      }}
-                      variant={m.item_type === "veg" ? "secondary" : "warning"}
-                    >
-                      ADD
-                    </Button>
+                    <div>
+                      <Button
+                        style={{
+                          width: "fit-content",
+                          padding: "5px 10px",
+                          fontSize: "14px",
+                          // color: "green",
+                        }}
+                        variant={m.item_type === "veg" ? "success" : "danger"}
+                      >
+                        ADD
+                      </Button>
+                    </div>
                   </div>
+                  <hr style={{ margin: "auto", maxWidth: "650px" }} />
                 </div>
               ))}
             </div>
-            {/* <h1>{restaurant._id}</h1> */}
           </section>
         ))}
     </div>

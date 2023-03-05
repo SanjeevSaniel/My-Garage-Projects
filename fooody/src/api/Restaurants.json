@@ -3,10 +3,45 @@
         "_id": 1,
         "name": "Pizza Hut",
         "categories": "Pizzas",
+        "address": "Civil Township",
         "imageURL": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/mqip01qkhtqy5vwui6kw",
         "rating": 3.7,
         "price": 200,
-        "offer": "free delivery"
+        "offer": "free delivery",
+        "menu": [
+            {
+                "item_id": 1,
+                "item_name": "Margherita",
+                "item_price": 169,
+                "sub-category": "Veg Pizza",
+                "item_type": "veg",
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/dpventcrozvfni0lqb10"
+            },
+            {
+                "item_id": 2,
+                "item_name": "Veggie Tandoori",
+                "item_price": 259,
+                "sub-category": "Veg Pizza",
+                "item_type": "veg",
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/pdnars9izjxrigqy675c"
+            },
+            {
+                "item_id": 3,
+                "item_name": "Chicken N Corn Delight",
+                "item_price": 319,
+                "sub-category": "Non-Veg Pizza",
+                "item_type": "non-veg",
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/ydm9zbwskvhw1mozn4nd"
+            },
+            {
+                "item_id": 4,
+                "item_name": "Chicken Tikka",
+                "item_price": 379,
+                "sub-category": "Non-Veg Pizza",
+                "item_type": "non-veg",
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/juplqft4tmub5hqocwxk"
+            }
+        ]
     },
     {
         "_id": 2,
@@ -69,6 +104,14 @@
                 "sub-category": "North Indian",
                 "item_type": "veg",
                 "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/sdc9k0ddy7vss4dfq70z"
+            },
+            {
+                "item_id": 3,
+                "item_name": "Chicken Lotpot",
+                "item_price": 300,
+                "sub-category": "North Indian",
+                "item_type": "non-veg",
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/14b7859ac36a7001adead323b45c9e50"
             }
         ]
     },
