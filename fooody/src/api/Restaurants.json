@@ -60,7 +60,15 @@
                 "item_price": 375,
                 "sub-category": "North Indian",
                 "item_type": "veg",
-                "item_image": ""
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/yc1qyfr8pga6aui4dror"
+            },
+            {
+                "item_id": 2,
+                "item_name": "Veg Biryani",
+                "item_price": 275,
+                "sub-category": "North Indian",
+                "item_type": "veg",
+                "item_image": "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_1024/sdc9k0ddy7vss4dfq70z"
             }
         ]
     },
