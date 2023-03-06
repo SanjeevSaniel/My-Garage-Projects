@@ -16,11 +16,9 @@ const Menu = () => {
     if (existingItem.length !== 0) {
       let result = existingItem.map((i) => (i.quantity += 1));
       console.log(result);
-      // localStorage.setItem("food_cart", JSON.stringify(cart));
     } else {
       let updatedData = { ...item, quantity: 1 };
       setCart((current) => [...current, updatedData]);
-      // localStorage.setItem("food_cart", JSON.stringify(cart));
     }
   };
 
