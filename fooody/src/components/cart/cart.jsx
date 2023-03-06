@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./cart.css";
 import Table from "react-bootstrap/Table";
 import Button from "react-bootstrap/Button";
@@ -6,6 +6,9 @@ import { CartContext } from "../../App";
 
 const Cart = () => {
   const [cart, setCart] = useContext(CartContext);
+
+  const [noOfItems, setNoOfItems] = useState(0);
+  const [cartTotal, setCartTotal] = useState(0);
 
   const removeFromCart = (item) => {
     const newCart = cart.filter((c) => c.code !== item.code);
@@ -40,16 +43,56 @@ const Cart = () => {
     }
   };
 
+  // function total() {
+  //   let sum = 0;
+  //   for (let item in cart) {
+  //     sum += item.menu.quantity;
+  //   }
+  //   setCartTotal(sum);
+  // }
+
+  // function total() {
+  //   let cartCopy = [...cart];
+  //   let sum = 0;
+  //   if (cartCopy.length !== 0) {
+  //     for (let item of cartCopy) {
+  //       sum += item.quantity;
+  //       console.log(item);
+  //     }
+  //     setNoOfItems(sum);
+  //     setCartTotal(sum);
+  //   }
+  // }
+  // total();
+
   useEffect(() => {
     console.log(cart);
-  }, [cart]);
+
+    function total(cart) {
+      let cartCopy = [...cart];
+      let quantityTotal = 0;
+      let priceTotal = 0;
+      if (cartCopy.length !== 0) {
+        for (let item of cartCopy) {
+          quantityTotal += item.quantity;
+          priceTotal += item.quantity * item.price;
+          console.log(item);
+        }
+        console.log("Total", quantityTotal);
+        setNoOfItems(quantityTotal);
+        setCartTotal(priceTotal);
+      }
+    }
+
+    total(cart);
+  }, [cart, cartTotal, noOfItems]);
 
   return (
     <div className="cart__container">
       <h6 className="cart__container__title">Cart</h6>
 
       <section className="container-grid">
-        <Table>
+        <Table bordered className="table">
           <thead>
             <tr>
               <th></th>
@@ -70,8 +113,9 @@ const Cart = () => {
                   <Button
                     disabled={item.quantity <= 1 ? true : false}
                     onClick={() => decreaseQuantity(item)}
-                    variant="secondary"
-                    style={{ padding: "2px 8px" }}
+                    variant="outline-secondary"
+                    size="sm"
+                    style={{ padding: "1px 8px" }}
                   >
                     -
                   </Button>
@@ -80,8 +124,9 @@ const Cart = () => {
                   </span>
                   <Button
                     onClick={() => increaseQuantity(item)}
-                    variant="secondary"
-                    style={{ padding: "2px 8px" }}
+                    variant="outline-secondary"
+                    size="sm"
+                    style={{ padding: "1px 6px" }}
                   >
                     +
                   </Button>
@@ -93,6 +138,7 @@ const Cart = () => {
                     variant="outline-danger"
                     size="sm"
                     onClick={() => removeFromCart(item)}
+                    style={{ padding: "1px 6px" }}
                   >
                     X
                   </Button>
@@ -110,8 +156,12 @@ const Cart = () => {
                 <td>{cart.length}</td>
               </tr>
               <tr>
+                <td>Total Quanity</td>
+                <td>{noOfItems}</td>
+              </tr>
+              <tr>
                 <td>Total Cost</td>
-                <td></td>
+                <td>₹{cartTotal}</td>
               </tr>
             </tbody>
           </Table>
