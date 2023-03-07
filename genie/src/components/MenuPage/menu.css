@@ -1,0 +1,13 @@
+.add-to-cart-message {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  background: #e68607;
+  color: #ffffff;
+  max-width: fit-content;
+  font-size: 16px;
+  padding: 2px 5px;
+  top: 0;
+  left: calc((1000px - 168px) / 2);
+  text-transform: capitalize;
+}

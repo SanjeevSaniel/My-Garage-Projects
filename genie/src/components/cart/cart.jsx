@@ -10,6 +10,8 @@ const Cart = () => {
   const [noOfItems, setNoOfItems] = useState(0);
   const [cartTotal, setCartTotal] = useState(0);
 
+  const [toPay, setToPay] = useState(0);
+
   const removeFromCart = (item) => {
     const newCart = cart.filter((c) => c.code !== item.code);
     localStorage.setItem("food_cart", JSON.stringify(newCart));
@@ -87,6 +89,11 @@ const Cart = () => {
     total(cart);
   }, [cart, cartTotal, noOfItems]);
 
+  useEffect(() => {
+    let sum = cartTotal + cartTotal * 0.03;
+    setToPay(sum.toFixed(2));
+  }, [cartTotal]);
+
   return (
     <div className="cart__container">
       <h6 className="cart__container__title">Cart</h6>
@@ -149,6 +156,7 @@ const Cart = () => {
         </Table>
 
         <aside className="cart-totals">
+          <h5>Bill Details</h5>
           <Table>
             <tbody>
               <tr>
@@ -160,10 +168,22 @@ const Cart = () => {
                 <td>{noOfItems}</td>
               </tr>
               <tr>
-                <td>Total Cost</td>
+                <td>Item Total</td>
                 <td>₹{cartTotal}</td>
               </tr>
+              <tr>
+                <td>
+                  <span>Govt Taxes & Other Charges</span>
+                </td>
+                <td>₹{(cartTotal * 0.03).toFixed(2)}</td>
+              </tr>
             </tbody>
+            <tfoot>
+              <tr style={{ fontWeight: "600" }}>
+                <td>TO PAY</td>
+                <td>₹{toPay}</td>
+              </tr>
+            </tfoot>
           </Table>
         </aside>
       </section>

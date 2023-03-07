@@ -1,10 +1,20 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import "./menu.css";
 import { useParams } from "react-router-dom";
 import { CartContext, RestaurantContext } from "./../../App";
 
 import Button from "react-bootstrap/Button";
 
 const Menu = () => {
+  const [visible, setVisible] = useState(false);
+
+  const toggleView = () => {
+    setVisible((c) => !c);
+    setTimeout(() => {
+      setVisible((c) => !c);
+    }, 1000);
+  };
+
   const restaurants = useContext(RestaurantContext);
   const { r_id } = useParams();
 
@@ -20,6 +30,8 @@ const Menu = () => {
       let updatedData = { ...item, quantity: 1 };
       setCart((current) => [...current, updatedData]);
     }
+
+    toggleView();
   };
 
   useEffect(() => {
@@ -27,7 +39,20 @@ const Menu = () => {
   }, [cart]);
 
   return (
-    <div style={{ margin: "auto", maxWidth: "1000px" }}>
+    <div
+      style={{
+        margin: "auto",
+        paddingTop: "2rem",
+        maxWidth: "1000px",
+        position: "relative",
+      }}
+    >
+      {visible ? (
+        <div className="add-to-cart-message">Item added to cart</div>
+      ) : (
+        ""
+      )}
+
       {restaurants
         .filter((restaurant) => restaurant._id === parseInt(r_id))
         .map((restaurant) => (
