@@ -1,13 +1,13 @@
 import { createContext, useEffect, useState } from "react";
 import "./App.css";
 
-import NavbarComponent from "./common/navbarComponent";
+import NavbarComponent from "./common/NavbarContainer";
 
 import { Route, Routes } from "react-router-dom";
 import Menu from "./components/MenuPage/menu";
 
-import RestaurantApp from "./components/RestaurantApp/restaurantApp";
-import Cart from "./components/cart/cart";
+import RestaurantApp from "./components/RestaurantApp/RestaurantApp";
+import Cart from "./components/cart/Cart";
 
 export const RestaurantContext = createContext();
 export const CartContext = createContext();
@@ -18,7 +18,10 @@ function App() {
   const [restaurants, setRestaurants] = useState([]);
 
   const [cart, setCart] = useState([]);
-  // const [cartCount, setCartCount] = useState(0);
+
+  const handleCart = (value) => {
+    setCart(value);
+  };
 
   useEffect(() => {
     setRestaurants(data);
@@ -31,11 +34,9 @@ function App() {
 
   return (
     <div className="App">
-      <CartContext.Provider value={[cart, setCart]}>
+      <CartContext.Provider value={[cart, handleCart]}>
         <NavbarComponent />
         <RestaurantContext.Provider value={restaurants}>
-          {/* <RestaurantApp /> */}
-
           <Routes>
             <Route path="/cart" element={<Cart />} />
             <Route path="/restaurant/:r_id" element={<Menu />} />

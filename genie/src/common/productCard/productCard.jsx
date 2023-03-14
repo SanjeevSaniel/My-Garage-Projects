@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
-import "./productCard.css";
+import "./ProductCard.css";
 import { Link } from "react-router-dom";
-// import Food from "../../images/ldywxlfetpfojuajk5xe.webp";
 import Discount from "../../images/discount.png";
 
 import Card from "react-bootstrap/Card";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-// import Badge from "react-bootstrap/Badge";
-import { RestaurantContext } from "./../../App";
+import { RestaurantContext } from "../../App";
 
 const ProductCard = ({ onRestaurantSelect }) => {
   const restaurants = useContext(RestaurantContext);
@@ -41,13 +39,9 @@ const ProductCard = ({ onRestaurantSelect }) => {
               style={{
                 width: "270px",
                 margin: "auto",
-                // border: "2px solid red",
-                // display: "flex",
-                // justifyContent: "space-around",
                 alignItems: "center",
               }}
               className="items-card"
-              // className="item-container"
             >
               <Card className="item-container" style={{ border: "none" }}>
                 <Card style={{ border: "none" }}>
@@ -71,7 +65,6 @@ const ProductCard = ({ onRestaurantSelect }) => {
                           star
                         </span>
                         {restaurant.rating.toFixed(1)}
-                        {/* <Badge bg="secondary">{restaurant.rating}</Badge> */}
                       </span>
                       <span>-</span>
                       <span className="item-price">

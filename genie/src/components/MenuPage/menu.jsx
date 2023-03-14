@@ -6,7 +6,11 @@ import { CartContext, RestaurantContext } from "./../../App";
 import Button from "react-bootstrap/Button";
 
 const Menu = () => {
+  const { r_id } = useParams();
+  const restaurants = useContext(RestaurantContext);
   const [visible, setVisible] = useState(false);
+
+  const [cart, handleCart] = useContext(CartContext);
 
   const toggleView = () => {
     setVisible((c) => !c);
@@ -14,11 +18,6 @@ const Menu = () => {
       setVisible((c) => !c);
     }, 1000);
   };
-
-  const restaurants = useContext(RestaurantContext);
-  const { r_id } = useParams();
-
-  const [cart, setCart] = useContext(CartContext);
 
   const addToCart = (item) => {
     let existingItem = cart.filter((c) => c.code === item.code);
@@ -28,7 +27,7 @@ const Menu = () => {
       console.log(result);
     } else {
       let updatedData = { ...item, quantity: 1 };
-      setCart((current) => [...current, updatedData]);
+      handleCart((current) => [...current, updatedData]);
     }
 
     toggleView();

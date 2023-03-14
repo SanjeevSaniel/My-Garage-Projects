@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import Logo from "../images/genie.png";
-import "./navbar.css";
+import "./Navbar.css";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
@@ -22,7 +22,6 @@ const NavbarComponent = () => {
       variant="light"
       className="mb-3"
       fixed="top"
-      // style={{ alignItems: "center" }}
     >
       <Container fluid>
         <Link to={"/"} style={{ textDecoration: "none" }}>
