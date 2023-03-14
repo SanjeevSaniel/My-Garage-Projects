@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
-import "./menu.css";
+import "./Menu.css";
 import { useParams } from "react-router-dom";
-import { CartContext, RestaurantContext } from "./../../App";
+import { CartContext, RestaurantContext } from "../../App";
 
 import Button from "react-bootstrap/Button";
 

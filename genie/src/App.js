@@ -4,7 +4,7 @@ import "./App.css";
 import NavbarComponent from "./common/NavbarContainer";
 
 import { Route, Routes } from "react-router-dom";
-import Menu from "./components/MenuPage/menu";
+import Menu from "./components/MenuPage/Menu";
 
 import RestaurantApp from "./components/RestaurantApp/RestaurantApp";
 import Cart from "./components/cart/Cart";
@@ -14,7 +14,7 @@ export const CartContext = createContext();
 export const CartCountContext = createContext();
 
 function App() {
-  const data = require("./api/Restaurants.json");
+  const restaurantsData = require("./api/Restaurants.json");
   const [restaurants, setRestaurants] = useState([]);
 
   const [cart, setCart] = useState([]);
@@ -24,8 +24,8 @@ function App() {
   };
 
   useEffect(() => {
-    setRestaurants(data);
-  }, [restaurants, data]);
+    setRestaurants(restaurantsData);
+  }, [restaurants, restaurantsData]);
 
   useEffect(() => {
     let result = JSON.parse(localStorage.getItem("food_cart"));
