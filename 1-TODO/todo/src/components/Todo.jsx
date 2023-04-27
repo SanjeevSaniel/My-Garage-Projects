@@ -2,11 +2,11 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
+  // CardFooter,
   Text,
   Heading,
   Stack,
-  HStack,
+  // HStack,
   // Link,
   Button,
   Container,
@@ -14,7 +14,7 @@ import {
   GridItem,
   // Box,
   // Image,
-  Show,
+  // Show,
 } from "@chakra-ui/react";
 
 import { useState } from "react";
